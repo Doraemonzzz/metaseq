@@ -326,7 +326,7 @@ def override_module_args(args: Namespace) -> Tuple[List[str], List[str]]:
 
         no_dc = True
         if hasattr(args, "arch"):
-            from metaseq.models import ARCH_MODEL_REGISTRY, ARCH_MODEL_NAME_REGISTRY
+            from metaseq.models import ARCH_MODEL_NAME_REGISTRY, ARCH_MODEL_REGISTRY
 
             if args.arch in ARCH_MODEL_REGISTRY:
                 m_cls = ARCH_MODEL_REGISTRY[args.arch]

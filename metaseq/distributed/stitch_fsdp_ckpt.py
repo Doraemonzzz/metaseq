@@ -8,7 +8,7 @@ import logging
 import os
 import re
 import time
-from collections import defaultdict, OrderedDict
+from collections import OrderedDict, defaultdict
 from glob import glob
 from pathlib import Path
 

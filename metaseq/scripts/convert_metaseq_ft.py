@@ -7,9 +7,9 @@ import os
 import re
 from glob import glob
 from typing import Any, Dict, List, Tuple
+
 import fire
 import torch
-
 
 logging.basicConfig(format="%(asctime)s | %(name)s | %(message)s", level=logging.INFO)
 logger: logging.Logger = logging.getLogger("metaseq.scripts.convert_metaseq_ft")

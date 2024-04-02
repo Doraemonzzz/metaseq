@@ -3,14 +3,13 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-import time
 import logging
+import time
 from typing import Dict
 from urllib.parse import urlparse
 
+from torch.distributed import Store, TCPStore, register_rendezvous_handler, rendezvous
 from torch.distributed.constants import default_pg_timeout
-from torch.distributed import register_rendezvous_handler, Store, TCPStore, rendezvous
-
 
 RETRIES = 5
 COOLDOWN = 0.25

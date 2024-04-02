@@ -28,7 +28,7 @@ nvidia-docker exec -ti ft bash
 git clone -b v5.3 https://github.com/NVIDIA/FasterTransformer.git
 mkdir -p FasterTransformer/build && cd FasterTransformer/build
 git submodule init && git submodule update
-cmake -DSM=xx -DCMAKE_BUILD_TYPE=Release -DBUILD_PYT=ON -DBUILD_MULTI_GPU=ON BUILD_MIXED_GEMM=ON .. 
+cmake -DSM=xx -DCMAKE_BUILD_TYPE=Release -DBUILD_PYT=ON -DBUILD_MULTI_GPU=ON BUILD_MIXED_GEMM=ON ..
 make -j"$(grep -c ^processor /proc/cpuinfo)"
 
 # Convert metaseq checkpoints

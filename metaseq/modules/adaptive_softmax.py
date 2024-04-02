@@ -8,9 +8,10 @@ import operator
 
 import torch
 import torch.nn.functional as F
+from torch import nn
+
 from metaseq.modules.dropout import Dropout
 from metaseq.modules.quant_noise import quant_noise
-from torch import nn
 
 
 class TiedLinear(nn.Module):

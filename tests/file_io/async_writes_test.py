@@ -16,7 +16,6 @@ import time
 
 from metaseq.file_io.common import PathManager
 
-
 # pyre-fixme[5]: Global expression must be annotated.
 logger = logging.getLogger(__name__)
 

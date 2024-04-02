@@ -3,18 +3,17 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-from abc import abstractmethod
-from datetime import datetime
 import base64
 import io
 import logging
 import os
 import shutil
 import time
+from abc import abstractmethod
+from datetime import datetime
 from typing import IO, Any, Dict, Generator, List, Optional, Tuple, Union
 
-from metaseq.file_io.common import file_lock, get_cache_dir, PathHandler
-
+from metaseq.file_io.common import PathHandler, file_lock, get_cache_dir
 
 try:
     import azure.core.exceptions as azure_exceptions
@@ -527,7 +526,6 @@ class AzureBlobPathHandler(PathHandler):
         """
         No-op since blob storage has a flat structure and no explicit notion of directories.
         """
-        pass
 
     def _copy_from_local(
         self, local_path: str, dst_path: str, overwrite: bool = False, **kwargs: Any

@@ -15,11 +15,11 @@ from metaseq.dataclass.configs import (
     CommonEvalConfig,
     DatasetConfig,
     DistributedTrainingConfig,
+    EMAConfig,
     EvalLMConfig,
     GenerationConfig,
     OptimizationConfig,
     ReshardConfig,
-    EMAConfig,
 )
 from metaseq.dataclass.utils import gen_parser_from_dataclass
 
@@ -107,7 +107,7 @@ def parse_args_and_arch(
             **{k: v for k, v in vars(args).items() if v is not None}
         )
 
-    from metaseq.models import ARCH_MODEL_REGISTRY, ARCH_CONFIG_REGISTRY, MODEL_REGISTRY
+    from metaseq.models import ARCH_CONFIG_REGISTRY, ARCH_MODEL_REGISTRY, MODEL_REGISTRY
 
     # Before creating the true parser, we need to import optional user module
     # in order to eagerly import custom tasks, optimizers, architectures, etc.

@@ -11,16 +11,17 @@ Launch with `python -m metaseq.cli.interactive_hosted` to run locally.
 See docs/api.md for more information.
 """
 
-import os
 import ast
+import importlib
+import os
 import queue
-import pkg_resources
 import random
 import threading
 import traceback
 
+import pkg_resources
 import torch
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 from werkzeug.exceptions import HTTPException
 
 from metaseq import options
@@ -29,11 +30,9 @@ from metaseq.dataclass.utils import convert_namespace_to_omegaconf
 from metaseq.distributed import utils as distributed_utils
 from metaseq.hub_utils import GeneratorInterface
 from metaseq.service.queue import PriorityQueueRingShard
-from metaseq.service.workers import WorkItem
-from metaseq.service.utils import get_my_ip, build_logger
 from metaseq.service.responses import OAIResponse
-
-import importlib
+from metaseq.service.utils import build_logger, get_my_ip
+from metaseq.service.workers import WorkItem
 
 if "METASEQ_SERVICE_CONSTANTS_MODULE" not in os.environ:
     constants_module = importlib.import_module("metaseq.service.constants")

@@ -5,8 +5,9 @@
 
 import unittest
 
-import tests.utils as test_utils
 import torch
+
+import tests.utils as test_utils
 from metaseq.data import TokenBlockDataset
 
 

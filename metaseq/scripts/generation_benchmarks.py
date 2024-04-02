@@ -3,18 +3,20 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-import os
-from transformers import GPT2Tokenizer
-from metaseq import checkpoint_utils, tasks, utils
-import torch
-from metaseq.scripts.convert_to_singleton import create_generation_config_with_defaults
-from metaseq.distributed import utils as dist_utils
-from metaseq.distributed import fsdp_enable_wrap, fsdp_wrap
-from metaseq.dataclass.configs import MetaseqConfig
 import argparse
-import urllib.request
-import tarfile
+import os
 import shutil
+import tarfile
+import urllib.request
+
+import torch
+from transformers import GPT2Tokenizer
+
+from metaseq import checkpoint_utils, tasks, utils
+from metaseq.dataclass.configs import MetaseqConfig
+from metaseq.distributed import fsdp_enable_wrap, fsdp_wrap
+from metaseq.distributed import utils as dist_utils
+from metaseq.scripts.convert_to_singleton import create_generation_config_with_defaults
 
 prompts = ["Paris is the capital of France and it"] * 1000
 links_to_data = {}

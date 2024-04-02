@@ -164,16 +164,15 @@ def distributed_init(cfg: MetaseqConfig):
     if nodelist:
         logger.info(f"SLURM nodelist: {nodelist}")
 
-    from metaseq.modules.megatron.mpu import (
-        initialize_model_parallel,
-        model_parallel_cuda_manual_seed,
-    )
-
     # Following initializes memory buffer in Megatron code which uses
     # buffered memory for tensor parallel GPU comms protocols
     from metaseq.modules.megatron.global_vars import (
         _GLOBAL_MEMORY_BUFFER,
         _set_global_memory_buffer,
+    )
+    from metaseq.modules.megatron.mpu import (
+        initialize_model_parallel,
+        model_parallel_cuda_manual_seed,
     )
 
     global _USE_MEGATRON

@@ -10,10 +10,10 @@ import sys
 import torch
 from setuptools import Extension, find_packages, setup
 from torch.utils.cpp_extension import (
+    CUDA_HOME,
+    BuildExtension,
     CppExtension,
     CUDAExtension,
-    BuildExtension,
-    CUDA_HOME,
 )
 
 if sys.version_info < (3, 6):

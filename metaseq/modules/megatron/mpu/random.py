@@ -10,7 +10,8 @@ import contextlib
 
 import torch
 from torch import _C
-from torch.cuda import _lazy_call, device as device_ctx_manager
+from torch.cuda import _lazy_call
+from torch.cuda import device as device_ctx_manager
 
 from .initialize import (
     get_data_parallel_rank,

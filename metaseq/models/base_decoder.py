@@ -90,7 +90,6 @@ class BaseDecoder(nn.Module):
         previous time step. A typical use case is beam search, where the input
         order changes between time steps based on the selection of beams.
         """
-        pass
 
     def get_normalized_probs(self, logits: Tensor, log_probs: bool):
         """Get normalized probabilities (or log probs) from a net's output."""

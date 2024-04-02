@@ -1,29 +1,17 @@
-from collections import OrderedDict
 import concurrent
 import errno
-from io import IOBase
 import logging
 import os
 import shutil
 import tempfile
 import traceback
+from collections import OrderedDict
+from io import IOBase
+from typing import IO, Any, Callable, Dict, List, MutableMapping, Optional, Set, Union
 
 import portalocker
 
-from typing import (
-    IO,
-    Any,
-    Callable,
-    Dict,
-    List,
-    MutableMapping,
-    Optional,
-    Set,
-    Union,
-)
-
 from metaseq.file_io.common.non_blocking_io import NonBlockingIOManager
-
 
 __all__ = [
     "PathManager",

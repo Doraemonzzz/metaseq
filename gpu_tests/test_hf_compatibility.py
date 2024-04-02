@@ -16,7 +16,7 @@ from metaseq import checkpoint_utils, tasks, utils
 from metaseq.dataclass.configs import MetaseqConfig
 from metaseq.distributed import fsdp_enable_wrap, fsdp_wrap
 from metaseq.distributed import utils as distributed_utils
-from metaseq.hub_utils import tensorize_input, get_next_token, setup_vocab_and_merges
+from metaseq.hub_utils import get_next_token, setup_vocab_and_merges, tensorize_input
 from metaseq.modules.megatron.mpu import destroy_model_parallel
 from metaseq.scripts.convert_to_singleton import create_generation_config_with_defaults
 

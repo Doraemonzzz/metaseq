@@ -27,4 +27,3 @@ pulls:
   # Comment to post when closing a stale pull request.
   closeComment: >
     Closing this pull request after a prolonged period of inactivity. If this issue is still present in the latest release, please ask for this pull request to be reopened. Thank you!
-

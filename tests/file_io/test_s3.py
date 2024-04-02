@@ -10,7 +10,6 @@ import unittest
 
 from metaseq.file_io.s3 import S3PathHandler
 
-
 try:
     import boto3
 except ImportError:

@@ -13,17 +13,13 @@ from typing import Any, Dict, List
 
 import torch
 
-from metaseq.data import (
-    JsonlDataset,
-    data_utils,
-)
-from metaseq.tasks.streaming_language_modeling import (
-    StreamingLanguageModelingTask,
-    StreamingLanguageModelingConfig,
-)
-from metaseq.tasks.streaming_language_modeling import DocumentToSequenceDataset
-
+from metaseq.data import JsonlDataset, data_utils
 from metaseq.tasks import register_task
+from metaseq.tasks.streaming_language_modeling import (
+    DocumentToSequenceDataset,
+    StreamingLanguageModelingConfig,
+    StreamingLanguageModelingTask,
+)
 
 logger = logging.getLogger(__name__)
 

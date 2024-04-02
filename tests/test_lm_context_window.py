@@ -8,7 +8,7 @@ import unittest
 import torch
 
 from metaseq.data import MonolingualDataset
-from metaseq.tasks.language_modeling import LanguageModelingTask, LanguageModelingConfig
+from metaseq.tasks.language_modeling import LanguageModelingConfig, LanguageModelingTask
 from tests import utils as test_utils
 
 

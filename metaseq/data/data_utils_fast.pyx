@@ -8,7 +8,6 @@ import numpy as np
 
 cimport cython
 cimport numpy as np
-
 from libc.stdint cimport int32_t, int64_t
 from libcpp cimport bool as bool_t
 

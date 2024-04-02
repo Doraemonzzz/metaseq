@@ -4,14 +4,14 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
+from itertools import chain
+
 import numpy as np
 import torch
-from itertools import chain
-from libc.math cimport ceil
 
 cimport cython
 cimport numpy as np
-
+from libc.math cimport ceil
 from libc.stdint cimport int32_t, int64_t
 
 DTYPE = np.int64

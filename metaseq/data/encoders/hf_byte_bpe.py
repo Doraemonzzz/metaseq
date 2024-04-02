@@ -3,8 +3,8 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-from typing import Optional
 from dataclasses import dataclass, field
+from typing import Optional
 
 from metaseq import file_utils
 from metaseq.data.encoders import register_bpe

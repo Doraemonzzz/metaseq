@@ -3,23 +3,20 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-import os
-import math
 import logging
-from typing import Optional
+import math
+import os
+import time
+from contextlib import contextmanager
+from ctypes import addressof, c_int, memmove, sizeof
+from multiprocessing import Array, Lock
+from typing import Iterable, List, Literal, Optional, Tuple, TypedDict, Union
 
 import numpy as np
 import torch
 
 from metaseq.data import data_utils
 from metaseq.distributed import utils as distributed_utils
-import time
-
-from typing import Union, List, Iterable, Tuple, TypedDict, Literal
-
-from multiprocessing import Array, Lock
-from contextlib import contextmanager
-from ctypes import c_int, sizeof, memmove, addressof
 
 logger = logging.getLogger(__name__)
 

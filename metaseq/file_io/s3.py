@@ -10,12 +10,13 @@ import os
 import shutil
 import types
 from functools import partial
-from typing import Any, Dict, IO, List, Optional, Tuple, Union
+from typing import IO, Any, Dict, List, Optional, Tuple, Union
 
 import boto3
 import botocore
 from boto3.s3.transfer import TransferConfig
-from metaseq.file_io.common import file_lock, get_cache_dir, PathHandler
+
+from metaseq.file_io.common import PathHandler, file_lock, get_cache_dir
 
 logger = logging.getLogger(__name__)
 

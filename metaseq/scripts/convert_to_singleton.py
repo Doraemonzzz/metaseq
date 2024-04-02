@@ -37,11 +37,11 @@ import sys
 
 import torch
 
-from metaseq import options, tasks, checkpoint_utils, utils
+from metaseq import checkpoint_utils, options, tasks, utils
 from metaseq.dataclass.configs import MetaseqConfig
 from metaseq.dataclass.utils import convert_namespace_to_omegaconf
-from metaseq.distributed import utils as distributed_utils
 from metaseq.distributed import fsdp_enable_wrap, fsdp_wrap
+from metaseq.distributed import utils as distributed_utils
 from metaseq.distributed.stitch_fsdp_ckpt import reshard_megatron_parts
 
 logging.basicConfig(

@@ -33,7 +33,6 @@ class BaseLRScheduler(object):
 
     def step_begin_epoch(self, epoch):
         """Update the learning rate at the beginning of the given epoch."""
-        pass
 
     def step(self, epoch, val_loss=None):
         """Update the learning rate at the end of the given epoch."""

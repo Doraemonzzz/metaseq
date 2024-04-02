@@ -22,8 +22,8 @@ from metaseq.data import (
     NumelDataset,
     PadDataset,
     PrependTokenDataset,
-    StripTokenDataset,
     SortDataset,
+    StripTokenDataset,
     TokenBlockDataset,
     data_utils,
 )

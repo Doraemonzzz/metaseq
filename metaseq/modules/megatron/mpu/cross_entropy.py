@@ -9,10 +9,7 @@
 
 import torch
 
-from .initialize import (
-    get_tensor_model_parallel_group,
-    get_tensor_model_parallel_rank,
-)
+from .initialize import get_tensor_model_parallel_group, get_tensor_model_parallel_rank
 from .utils import VocabUtility
 
 

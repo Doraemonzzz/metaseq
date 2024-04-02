@@ -5,14 +5,14 @@
 
 As of yesterday, at 12:46pm PST on January 6, our 175B model finally completed its training run on 300B tokens.  This required ~4.30E+23 FLOPs of compute, or roughly ~33 days of continuous training on 1024 80GB A100s (assuming no hardware issues, no numerical instabilities, etc.).
 
-To frame this: 
+To frame this:
 
 * The 175B GPT-3 model trained by OpenAI required [14.8 days of compute on 10,000 V100s](https://arxiv.org/pdf/2104.10350.pdf), and consumed 3.14+23 FLOPs.  The code to do so is not open-sourced.
-* A 1.1T Mixture-of-Experts model requires ~2.16+22 FLOPs of compute with 512 A100s. 
-  * This is equivalent to a 6.7B dense model. 
-  * A potentially useful metric to keep in mind is FLOPs/param on these trained models as a proxy for how much compute was used to "derive" each parameter.  For 1.1T MoE, that ratio is ~19.6+9.  For this 175B (dense) model, that ratio is ~2.5+12 (~125x higher than MoEs). 
+* A 1.1T Mixture-of-Experts model requires ~2.16+22 FLOPs of compute with 512 A100s.
+  * This is equivalent to a 6.7B dense model.
+  * A potentially useful metric to keep in mind is FLOPs/param on these trained models as a proxy for how much compute was used to "derive" each parameter.  For 1.1T MoE, that ratio is ~19.6+9.  For this 175B (dense) model, that ratio is ~2.5+12 (~125x higher than MoEs).
 * This was not a benchmarking exercise.  The model was trained to "completion" with a corpus of 180B tokens.  We did not have time to curate a larger dataset before training started, given a tight deadline to deliver by the end of H2 2021.
-* Scaling to 1024 A100s to handle a real workload of this size is highly nontrivial. We will discuss infrastructure pain-points below. 
+* Scaling to 1024 A100s to handle a real workload of this size is highly nontrivial. We will discuss infrastructure pain-points below.
 * Ensuring training converges at this scale is also highly nontrivial without sufficient ablations at "medium" scale.  Results obtained from training at "small" scale (< ~13B params) also do not necessarily hold when "scaled-up". We will cover these learnings in a note to be released in the upcoming weeks.
 
 And to recap:

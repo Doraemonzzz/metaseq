@@ -6,10 +6,7 @@
 from numbers import Number
 
 from metaseq.logging.meters import AverageMeter
-from metaseq.logging.progress_bar.base_progress_bar import (
-    BaseProgressBar,
-    logger,
-)
+from metaseq.logging.progress_bar.base_progress_bar import BaseProgressBar, logger
 from metaseq.utils import get_precise_epoch
 
 wandb = None

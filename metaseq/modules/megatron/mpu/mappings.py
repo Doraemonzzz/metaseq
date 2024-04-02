@@ -11,10 +11,11 @@ import os
 import torch
 
 from metaseq.modules.megatron.global_vars import get_global_memory_buffer
+
 from .initialize import (
     get_tensor_model_parallel_group,
-    get_tensor_model_parallel_world_size,
     get_tensor_model_parallel_rank,
+    get_tensor_model_parallel_world_size,
 )
 from .utils import split_tensor_along_last_dim
 

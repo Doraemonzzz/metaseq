@@ -12,6 +12,7 @@ import torch.nn.init as init
 from torch.nn.parameter import Parameter
 
 from metaseq.modules.megatron.global_vars import get_global_memory_buffer
+
 from .initialize import (
     get_tensor_model_parallel_group,
     get_tensor_model_parallel_rank,
@@ -25,10 +26,7 @@ from .mappings import (
     scatter_to_tensor_model_parallel_region,
 )
 from .random import get_cuda_rng_tracker
-from .utils import (
-    VocabUtility,
-    divide,
-)
+from .utils import VocabUtility, divide
 
 _MODEL_PARALLEL_ATTRIBUTE_DEFAULTS = {
     "tensor_model_parallel": False,

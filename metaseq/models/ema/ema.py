@@ -22,9 +22,9 @@ import copy
 import logging
 
 import torch
-from metaseq.distributed import FullyShardedDataParallel
 
 from metaseq import checkpoint_utils
+from metaseq.distributed import FullyShardedDataParallel
 
 logger = logging.getLogger(__name__)
 

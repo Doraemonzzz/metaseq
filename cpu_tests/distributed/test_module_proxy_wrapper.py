@@ -9,7 +9,6 @@ import torch
 from torch import nn
 
 from metaseq.distributed import ModuleProxyWrapper
-
 from tests.distributed.utils import objects_are_equal
 
 

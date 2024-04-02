@@ -3,12 +3,12 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-from metaseq.service.queue import PriorityQueueRingShard
+import math
+import queue
 from dataclasses import dataclass
 from typing import Any
-import queue
-import math
 
+from metaseq.service.queue import PriorityQueueRingShard
 
 QUEUE_KEYS = [
     "temperature",

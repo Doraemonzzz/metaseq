@@ -31,7 +31,6 @@ class EpochListening:
 
     def set_epoch(self, epoch):
         """Will receive the updated epoch number at the beginning of the epoch."""
-        pass
 
 
 class BaseDataset(torch.utils.data.Dataset, EpochListening):

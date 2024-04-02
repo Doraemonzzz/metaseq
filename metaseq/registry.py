@@ -10,7 +10,7 @@ from hydra.core.config_store import ConfigStore
 from omegaconf import DictConfig
 
 from metaseq.dataclass import MetaseqDataclass
-from metaseq.dataclass.utils import populate_dataclass, merge_with_parent
+from metaseq.dataclass.utils import merge_with_parent, populate_dataclass
 
 REGISTRIES = {}
 

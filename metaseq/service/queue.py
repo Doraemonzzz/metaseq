@@ -4,8 +4,8 @@
 # LICENSE file in the root directory of this source tree.
 
 import hashlib
-from queue import PriorityQueue
 import random
+from queue import PriorityQueue
 
 
 class KeyedPriorityQueueCollection:

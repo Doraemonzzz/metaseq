@@ -11,16 +11,13 @@ for more details.
 import os
 
 from metaseq.launcher.opt_job_constants import (
+    MODEL_SIZES,
     TOTAL_TRAIN_TOKENS,
     TOTAL_WARMUP_TOKENS,
-    MODEL_SIZES,
     VALID_SUBSETS,
 )
-from metaseq.launcher.sweep import (
-    hyperparam,
-    get_env_from_args,
-    main as sweep_main,
-)
+from metaseq.launcher.sweep import get_env_from_args, hyperparam
+from metaseq.launcher.sweep import main as sweep_main
 
 try:
     # internal logic denoting where data locations are
@@ -36,7 +33,6 @@ for _cluster, _folder in DATA_LOCATIONS.items():
             from metaseq_internal.fb_sweep.dependency_checks import *  # noqa
         except ImportError:
             print("\n\nmetaseq_internal not installed! Proceeding...")
-            pass
         break
 
 

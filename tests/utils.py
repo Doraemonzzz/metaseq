@@ -13,14 +13,11 @@ import torch
 
 import metaseq.distributed.utils as distributed_utils
 from metaseq import options
+from metaseq.cli import train, validate
 from metaseq.data import Dictionary, data_utils
 from metaseq.dataclass.utils import convert_namespace_to_omegaconf
-from metaseq.models import (
-    BaseModel,
-    BaseDecoder,
-)
+from metaseq.models import BaseDecoder, BaseModel
 from metaseq.tasks import LegacyTask
-from metaseq.cli import validate, train
 
 
 def collate(

@@ -13,11 +13,7 @@ from omegaconf import II
 
 from metaseq.dataclass import ChoiceEnum, MetaseqDataclass
 from metaseq.dataclass.constants import ATTN_CHOICES, UNSPECIFIED_DOC_SEP
-from metaseq.models import (
-    BaseModel,
-    register_model,
-    register_model_architecture,
-)
+from metaseq.models import BaseModel, register_model, register_model_architecture
 from metaseq.models.transformer_decoder import (
     DEFAULT_MIN_PARAMS_TO_WRAP,
     ModelParallelTransformerDecoder,

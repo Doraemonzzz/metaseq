@@ -12,7 +12,7 @@ import torch
 from omegaconf import DictConfig
 
 from metaseq import metrics
-from metaseq.data import Dictionary, BaseDataset, data_utils, encoders, iterators
+from metaseq.data import BaseDataset, Dictionary, data_utils, encoders, iterators
 from metaseq.dataclass import MetaseqDataclass
 from metaseq.dataclass.utils import gen_parser_from_dataclass
 from metaseq.utils import tokenize_line
@@ -426,11 +426,9 @@ class BaseTask(object):
 
     def begin_epoch(self, epoch, model):
         """Hook function called before the start of each epoch."""
-        pass
 
     def begin_valid_epoch(self, epoch, model):
         """Hook function called before the start of each validation epoch."""
-        pass
 
     def reduce_metrics(self, logging_outputs, criterion):
         """Aggregate logging outputs from data parallel training."""

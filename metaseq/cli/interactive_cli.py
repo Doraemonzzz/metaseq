@@ -11,11 +11,12 @@ Launch with `python -m metaseq.cli.interactive_hosted` to run locally.
 See docs/api.md for more information.
 """
 
-import os
 import ast
+import importlib
+import logging
+import os
 import random
 import sys
-import logging
 
 import torch
 
@@ -25,8 +26,6 @@ from metaseq.dataclass.utils import convert_namespace_to_omegaconf
 from metaseq.distributed import utils as distributed_utils
 from metaseq.hub_utils import GeneratorInterface
 from metaseq.service.utils import build_logger
-
-import importlib
 
 if "METASEQ_SERVICE_CONSTANTS_MODULE" not in os.environ:
     constants_module = importlib.import_module("metaseq.service.constants")

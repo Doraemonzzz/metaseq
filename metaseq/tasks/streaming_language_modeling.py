@@ -25,12 +25,10 @@ from metaseq.data import (
     data_utils,
     iterators,
 )
-
-from metaseq.dataclass import MetaseqDataclass
-from metaseq.tasks import LegacyTask, register_task
-from metaseq.data.document_to_sequence import DocumentToSequenceDataset
 from metaseq.data.cm3_dataset import CausalMaskedDocumentToSequenceDataset
-from metaseq.dataclass import ChoiceEnum
+from metaseq.data.document_to_sequence import DocumentToSequenceDataset
+from metaseq.dataclass import ChoiceEnum, MetaseqDataclass
+from metaseq.tasks import LegacyTask, register_task
 
 try:
     from tokenizers import ByteLevelBPETokenizer, Tokenizer

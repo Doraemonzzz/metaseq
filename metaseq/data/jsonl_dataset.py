@@ -4,13 +4,13 @@
 # LICENSE file in the root directory of this source tree.
 
 import argparse
-from io import TextIOWrapper
 import json
 import logging
 import mmap
 import os
 import sys
 import threading
+from io import TextIOWrapper
 from pathlib import Path
 from typing import Callable, Optional
 

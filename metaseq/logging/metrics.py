@@ -16,15 +16,15 @@ import logging
 import subprocess
 import uuid
 from collections import defaultdict
-from typing import Callable, List, Optional, Dict
+from typing import Callable, Dict, List, Optional
 
 from .meters import (
-    OrderedDict,
-    MetersDict,
     AverageMeter,
-    TimeMeter,
-    StopwatchMeter,
     Meter,
+    MetersDict,
+    OrderedDict,
+    StopwatchMeter,
+    TimeMeter,
 )
 
 # Aggregation contexts are considered "active" when inside the scope

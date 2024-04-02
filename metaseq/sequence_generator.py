@@ -8,9 +8,8 @@
 
 import logging
 import math
-from typing import Dict, List, Optional, Tuple
-from metaseq.data.dictionary import Dictionary
 import sys
+from typing import Dict, List, Optional, Tuple
 
 import torch
 import torch.nn as nn
@@ -18,6 +17,7 @@ from torch import Tensor
 
 from metaseq import utils
 from metaseq.data import data_utils
+from metaseq.data.dictionary import Dictionary
 from metaseq.models import BaseDecoder
 
 logger = logging.getLogger(__name__)

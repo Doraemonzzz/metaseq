@@ -7,23 +7,23 @@ import argparse
 import datetime
 import os
 import subprocess
-from typing import Optional, List, Callable, MutableMapping
+from typing import Callable, List, MutableMapping, Optional
 from urllib.parse import urlparse
 
 try:
     # internal logic denoting where data locations are
     from metaseq_internal.constants import (
-        ComputeEnvs,
+        DEFAULT_CPU_PER_TASK,
         DEFAULT_PARTITION,
         DEFAULT_PREFIX,
-        DEFAULT_CPU_PER_TASK,
+        ComputeEnvs,
     )
 except ImportError:
     from metaseq.launcher.opt_job_constants import (
-        ComputeEnvs,
+        DEFAULT_CPU_PER_TASK,
         DEFAULT_PARTITION,
         DEFAULT_PREFIX,
-        DEFAULT_CPU_PER_TASK,
+        ComputeEnvs,
     )
 
 

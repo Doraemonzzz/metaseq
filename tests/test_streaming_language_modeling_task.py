@@ -10,8 +10,8 @@ import unittest
 
 import torch
 
+from cpu_tests.test_utils import write_dummy_bpe, write_dummy_jsonl_data_dir
 from tests.utils import train_language_model
-from cpu_tests.test_utils import write_dummy_jsonl_data_dir, write_dummy_bpe
 
 try:
     import tokenizers  # noqa

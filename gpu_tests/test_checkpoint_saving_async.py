@@ -3,21 +3,23 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-import sys
+import json
+import logging
+import multiprocessing
 import os
 import subprocess
-import json
-import multiprocessing
-from functools import partial, partialmethod
+import sys
 import unittest
-from unittest.mock import patch, MagicMock
+from functools import partial, partialmethod
+from unittest.mock import MagicMock, patch
+
 import torch
-from metaseq.dataclass.configs import DistributedTrainingConfig
-from metaseq.launcher.opt_baselines import cli_main as sweep_cli_main
+
 from metaseq.cli.train import cli_main as train_cli_main
+from metaseq.dataclass.configs import DistributedTrainingConfig
 from metaseq.distributed.utils import distributed_main
-from metaseq.launcher.opt_job_constants import Size, M
-import logging
+from metaseq.launcher.opt_baselines import cli_main as sweep_cli_main
+from metaseq.launcher.opt_job_constants import M, Size
 
 
 @unittest.skipIf(not torch.cuda.is_available(), "test requires 4 GPUs, none found")

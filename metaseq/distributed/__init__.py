@@ -4,13 +4,13 @@
 # LICENSE file in the root directory of this source tree.
 
 import metaseq.distributed.rendezvous  # noqa: F401
+
 from .fully_sharded_data_parallel import (
+    FullyShardedDataParallel,
     fsdp_enable_wrap,
     fsdp_wrap,
-    FullyShardedDataParallel,
 )
 from .module_proxy_wrapper import ModuleProxyWrapper
-
 
 __all__ = [
     "fsdp_enable_wrap",

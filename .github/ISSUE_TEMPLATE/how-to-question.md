@@ -6,9 +6,9 @@ labels: 'question, needs triage'
 
 ## ❓ Questions and Help
 
-### Before asking:   
-1. search the issues.   
-2. search the docs.    
+### Before asking:
+1. search the issues.
+2. search the docs.
 
 <!-- If you still can't find what you need: -->
 
@@ -16,7 +16,7 @@ labels: 'question, needs triage'
 
 #### Code
 
-<!-- Please paste a code snippet if your question requires it! -->   
+<!-- Please paste a code snippet if your question requires it! -->
 
 #### What have you tried?
 

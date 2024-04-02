@@ -89,8 +89,8 @@ class TokenBlockDataset(BaseDataset):
         """Use token_block_utils_fast to build arrays for indexing into self.dataset"""
         try:
             from metaseq.data.token_block_utils_fast import (
-                _get_slice_indices_fast,
                 _get_block_to_dataset_index_fast,
+                _get_slice_indices_fast,
             )
         except ImportError:
             raise ImportError(

@@ -20,10 +20,9 @@ For the 2.7B, 6.7B, and 13B, we also release intermediate checkpoints taken at e
 
 ## Model card & data card
 We are including a model card (Mitchell et al., 2018) and data card (Gebru et al., 2021) to help with transparency and accountability in model development.
-* [Model card](./model_card.md) 
+* [Model card](./model_card.md)
 * [Data card](./data_card.md)
 
 
 ## License
 The use of OPT model weights is subject to the [Model License](./MODEL_LICENSE.md).
-

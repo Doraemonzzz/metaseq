@@ -19,10 +19,10 @@ from fairscale.utils.containers import (
     unpack_kwargs,
     unpack_non_tensors,
 )
-from metaseq.modules.megatron import mpu
 from torch import Tensor
 
 from metaseq.distributed.utils import get_model_parallel_group
+from metaseq.modules.megatron import mpu
 
 
 # https://docs.python.org/3/library/threading.html#thread-local-data

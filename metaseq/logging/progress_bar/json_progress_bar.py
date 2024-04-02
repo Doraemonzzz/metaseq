@@ -9,8 +9,8 @@ from contextlib import contextmanager
 
 from metaseq.logging.progress_bar.base_progress_bar import (
     BaseProgressBar,
-    logger,
     format_stat,
+    logger,
 )
 from metaseq.utils import get_precise_epoch
 

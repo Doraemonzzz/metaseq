@@ -15,8 +15,8 @@ import multiprocessing
 import os
 import random
 import re
-from tempfile import TemporaryDirectory
 import uuid
+from tempfile import TemporaryDirectory
 
 from metaseq.file_io.azure_blob import AzureBlobPathHandler
 

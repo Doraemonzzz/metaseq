@@ -11,7 +11,7 @@ import numpy as np
 import torch
 from omegaconf import II
 
-from metaseq.data import Dictionary, BaseDataset
+from metaseq.data import BaseDataset, Dictionary
 from metaseq.dataclass import MetaseqDataclass
 from metaseq.tasks import BaseTask, register_task
 

@@ -12,7 +12,6 @@ import torch
 
 from .utils import ensure_divisibility
 
-
 # Intra-layer model parallel group that the current rank belongs to.
 _TENSOR_MODEL_PARALLEL_GROUP = None
 # Inter-layer model parallel group that the current rank belongs to.

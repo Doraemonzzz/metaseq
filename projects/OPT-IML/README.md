@@ -1,8 +1,8 @@
 ## About OPT-IML
-[OPT-IML (OPT + Instruction Meta-Learning)](https://arxiv.org/pdf/2212.12017.pdf) is a set of instruction-tuned versions of OPT, on a collection of ~2000 NLP tasks gathered from 8 NLP benchmarks, called OPT-IML Bench. 
+[OPT-IML (OPT + Instruction Meta-Learning)](https://arxiv.org/pdf/2212.12017.pdf) is a set of instruction-tuned versions of OPT, on a collection of ~2000 NLP tasks gathered from 8 NLP benchmarks, called OPT-IML Bench.
 
-We provide two model versions: 
-* OPT-IML trained on 1500 tasks with several tasks held-out for purposes of downstream evaluation, and 
+We provide two model versions:
+* OPT-IML trained on 1500 tasks with several tasks held-out for purposes of downstream evaluation, and
 * OPT-IML-Max trained on all ~2000 tasks
 
 ## Pretrained Model Weights
@@ -15,4 +15,3 @@ We provide two model versions:
 
 ## License
 The use of OPT-IML model weights is subject to the [OPT Model License](../OPT/MODEL_LICENSE.md).
-

@@ -6,8 +6,8 @@
 import unittest
 
 import numpy as np
-from metaseq.data.data_utils_fast import batch_by_size_fn
-from metaseq.data.data_utils_fast import batch_by_size_vec
+
+from metaseq.data.data_utils_fast import batch_by_size_fn, batch_by_size_vec
 
 
 class TestBatchBySize(unittest.TestCase):

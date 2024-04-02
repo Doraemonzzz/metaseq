@@ -11,11 +11,11 @@ import torch
 from omegaconf import II, MISSING
 
 from metaseq.dataclass.constants import (
+    CLIP_GRAD_NORM_TYPE_CHOICES,
     DATASET_IMPL_CHOICES,
     DDP_BACKEND_CHOICES,
-    TASK_DDP_BACKEND_CHOICES,
     LOG_FORMAT_CHOICES,
-    CLIP_GRAD_NORM_TYPE_CHOICES,
+    TASK_DDP_BACKEND_CHOICES,
 )
 
 

@@ -5,9 +5,9 @@
 
 A lot has happened since our December 3rd update.  To recap:
 
-* Infrastructure issues mentioned in the last update were escalated through the proper channels, and the team has since received additional compute for a larger "buffer pool" of machines that are ready to be swapped in when hosts go down. 
-* The team has also received some additional compute to start de-risking the evaluation pipeline, though there are ongoing infrastructure issues with this cloud provider across multiple clusters and multiple teams that are finally being surfaced together.  We are continuing to work with our infra team to resolve these issues. 
-* RSC is officially live, and we are continuing to work with the RSC team to raise hardware issues within the cluster, along with providing asks for general improvements to the developer experience workflow. 
+* Infrastructure issues mentioned in the last update were escalated through the proper channels, and the team has since received additional compute for a larger "buffer pool" of machines that are ready to be swapped in when hosts go down.
+* The team has also received some additional compute to start de-risking the evaluation pipeline, though there are ongoing infrastructure issues with this cloud provider across multiple clusters and multiple teams that are finally being surfaced together.  We are continuing to work with our infra team to resolve these issues.
+* RSC is officially live, and we are continuing to work with the RSC team to raise hardware issues within the cluster, along with providing asks for general improvements to the developer experience workflow.
 * DeepMind just released details last week on their 280B Gopher model (GPT-style) that was trained a year ago (for reference, OpenAI released GPT-3 details on May 2020).
   * What goes unmentioned in all of these large-scale efforts is the amount of compute needed to run all of the experiments that help inform decisions about _how/what_ to scale. This will be something we need account for in the future as well, if we want to continue pushing the limits of these large-scale models.  In other words, allocating just enough compute budget to train a large-scale model won't be enough to guarantee a better model.
 
@@ -64,9 +64,9 @@ We are still unclear why this one-liner affected training dynamics the way it di
 
 Evaluation at 175B scale brings its own set of challenges and difficulties, especially given the fact that the majority of our compute capacity is currently reserved for training. Code that is tested on 32GB V100s on one of our clusters does not necessarily work on our 80GB A100s, and ongoing issues with our 40GB A100s have also prevented us from running any workload of significant size there. Infrastructure issues aside, Sam, Naman, Todor, and Anjali have been working together to make evaluations accessible to the wider team, which include changes such as:
 
-* Consolidate shards and remove Adam parameters 
-* Re-shard (slice) the consolidated checkpoints for FSDP to evaluate layer-by-layer 
-* Completion of the end-to-end evaluations pipeline 
+* Consolidate shards and remove Adam parameters
+* Re-shard (slice) the consolidated checkpoints for FSDP to evaluate layer-by-layer
+* Completion of the end-to-end evaluations pipeline
 
 ## Baselines
 

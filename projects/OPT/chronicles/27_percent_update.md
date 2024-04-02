@@ -11,9 +11,9 @@ It’s been really rough for the team since the November 17th update.  Since the
 
 The vast majority of restarts have been due to hardware failures and the lack of ability to provision a sufficient number of "buffer" nodes to replace a bad node with once it goes down with ECC errors.  Replacement through the cloud interface can take hours for a single machine, and we started finding that more often than not we would end up getting the same bad machine again. Nodes would also come up with NCCL/IB issues, or the same ECC errors, forcing us to start instrumenting a slew of automated testing and infrastructure tooling ourselves.  Some of these include:
 
-* Replacing nodes through a script 
-* Adding GPU burn-in testing to detect memory errors 
-* Automating IB testing 
+* Replacing nodes through a script
+* Adding GPU burn-in testing to detect memory errors
+* Automating IB testing
 * Monitoring train.log
 
 There were also issues with blob store when downloading 1.6TB of a single model checkpoint (992 files, each ~1.7GB) on restarts, at which point the downloads themselves would start hanging nondeterministically, which then delayed training recovery even further. The cloud provider's Python API, being poorly documented itself, seemed to require quite a bit of debugging to iron out, though we've managed to settle on a solution that seems sufficient for now.

@@ -13,7 +13,7 @@ from numbers import Number
 
 import torch
 
-from metaseq.logging.meters import AverageMeter, TimeMeter, StopwatchMeter
+from metaseq.logging.meters import AverageMeter, StopwatchMeter, TimeMeter
 
 logger = logging.getLogger(__name__)
 
@@ -53,7 +53,6 @@ class BaseProgressBar(object):
 
     def update_config(self, config):
         """Log latest configuration."""
-        pass
 
     def _str_commas(self, stats):
         return ", ".join(key + "=" + stats[key].strip() for key in stats.keys())

@@ -8,7 +8,6 @@ import time
 from collections import OrderedDict
 from typing import Dict, Optional
 
-
 try:
     import torch
 

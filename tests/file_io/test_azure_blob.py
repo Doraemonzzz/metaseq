@@ -15,9 +15,9 @@ from contextlib import contextmanager
 from tempfile import TemporaryDirectory
 from typing import NamedTuple
 
-
 try:
     import azure.storage.blob as azure_blob
+
     from metaseq.file_io.azure_blob import AzureBlobPathHandler
 except ImportError:
     azure_blob = None

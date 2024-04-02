@@ -4,13 +4,13 @@
 # LICENSE file in the root directory of this source tree.
 
 import array
-import random
 import os
+import random
 import tempfile
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 
-from metaseq.cli.train import post_checkpoint_callback, _get_destination_path
+from metaseq.cli.train import _get_destination_path, post_checkpoint_callback
 from metaseq.dataclass.configs import MetaseqConfig
 
 

@@ -10,15 +10,16 @@ import operator
 import os
 import queue
 import time
+from ctypes import addressof, c_int, memmove, sizeof
 from threading import Thread
 from typing import Callable, Optional
+
 import numpy as np
 import torch
-from metaseq.distributed import utils as distributed_utils
 
 from metaseq.data import data_utils
 from metaseq.data.document_to_sequence import DocumentToSequenceDataset
-from ctypes import c_int, sizeof, memmove, addressof
+from metaseq.distributed import utils as distributed_utils
 
 logger = logging.getLogger(__name__)
 

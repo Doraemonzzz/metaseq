@@ -3,21 +3,20 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
+import pickle
+import random
 import unittest
 
 import torch
 
 from metaseq.data import (
-    iterators,
-    StreamingShuffleDataset,
-    StreamingTokenBlockDataset,
     PartitionedStreamingDataset,
+    StreamingShuffleDataset,
     StreamingSrcTgtDataset,
+    StreamingTokenBlockDataset,
+    iterators,
 )
 from metaseq.data.document_to_sequence import DocumentToSequenceDataset, LockingArray
-
-import random
-import pickle
 
 
 class TensorListDataset(torch.utils.data.Dataset):

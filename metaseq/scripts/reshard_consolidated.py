@@ -13,7 +13,6 @@ import fire
 import torch
 import torch.nn.functional as F
 
-
 logging.basicConfig(format="%(asctime)s | %(name)s | %(message)s", level=logging.INFO)
 logger: logging.Logger = logging.getLogger("metaseq.scripts.reshard_consolidated")
 

@@ -19,7 +19,7 @@ Steps to reproduce the behavior (**always include the command you ran**):
 
 
 #### Code sample
-<!-- Ideally attach a minimal code sample to reproduce the decried issue. 
+<!-- Ideally attach a minimal code sample to reproduce the decried issue.
 Minimal means having the shortest code but still preserving the bug. -->
 
 ### Expected behavior

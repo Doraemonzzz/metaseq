@@ -13,21 +13,22 @@ from torch import Tensor
 
 from metaseq import utils
 from metaseq.dataclass.constants import UNSPECIFIED_DOC_SEP
-from metaseq.distributed import utils as distributed_utils, fsdp_wrap
+from metaseq.distributed import fsdp_wrap
+from metaseq.distributed import utils as distributed_utils
 from metaseq.models import BaseDecoder
 from metaseq.modules import (
     Dropout,
     LayerNorm,
-    PositionalEmbedding,
-    ModelParallelTransformerDecoderLayer,
     Linear,
+    ModelParallelTransformerDecoderLayer,
+    PositionalEmbedding,
 )
 from metaseq.modules.checkpoint_activations import checkpoint_wrapper
 from metaseq.modules.megatron.mpu import (
     LinearWithGradAccumulationAndAsyncCommunication,
+    copy_to_tensor_model_parallel_region,
     gather_from_tensor_model_parallel_region,
     scatter_to_sequence_parallel_region,
-    copy_to_tensor_model_parallel_region,
 )
 
 logger = logging.getLogger(__name__)

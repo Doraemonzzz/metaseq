@@ -20,7 +20,6 @@ from functools import partial, wraps
 from hashlib import sha256
 from io import open
 
-
 try:
     from torch.hub import _get_torch_home
 

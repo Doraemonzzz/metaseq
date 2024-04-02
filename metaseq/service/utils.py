@@ -3,10 +3,10 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-import socket
 import logging
-import sys
 import os
+import socket
+import sys
 
 
 def normalize_newlines(s: str):

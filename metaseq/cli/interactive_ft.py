@@ -1,10 +1,11 @@
 import argparse
 import os
+from typing import Any, List, Optional
+
 import torch
 import torch.distributed as dist
 import torch.nn as nn
-from tokenizers import Tokenizer, ByteLevelBPETokenizer
-from typing import Any, List, Optional
+from tokenizers import ByteLevelBPETokenizer, Tokenizer
 
 try:
     torch.classes.load_library(os.environ.get("FT_PATH"))

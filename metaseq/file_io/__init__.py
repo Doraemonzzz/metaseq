@@ -3,14 +3,13 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-from argparse import Namespace  # noqa: F401
 import logging
+from argparse import Namespace  # noqa: F401
 
 import torch
-
 from omegaconf.dictconfig import DictConfig
-from metaseq.file_io.common import g_pathmgr as PathManager
 
+from metaseq.file_io.common import g_pathmgr as PathManager
 
 __all__ = [
     "PathManager",

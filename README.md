@@ -12,7 +12,7 @@ The OPT 125M--66B models are now available in [Hugging Face Transformers](https:
 
 ### Using OPT-175B with Alpa
 
-The OPT 125M--175B models are now supported in the [Alpa project](https://alpa-projects.github.io/tutorials/opt_serving.html), which 
+The OPT 125M--175B models are now supported in the [Alpa project](https://alpa-projects.github.io/tutorials/opt_serving.html), which
 enables serving OPT-175B with more flexible parallelisms on older generations of GPUs, such as 40GB A100, V100, T4, M60, etc.
 
 ### Using OPT with Colossal-AI
@@ -57,6 +57,5 @@ Metaseq is currently maintained by the CODEOWNERS: [Susan Zhang](https://github.
 
 ## License
 
-The majority of metaseq is licensed under the MIT license, however portions of the project are available under separate license terms: 
+The majority of metaseq is licensed under the MIT license, however portions of the project are available under separate license terms:
 * Megatron-LM is licensed under the [Megatron-LM license](https://github.com/NVIDIA/Megatron-LM/blob/main/LICENSE)
-

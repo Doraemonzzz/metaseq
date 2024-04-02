@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 from metaseq import file_utils
 from metaseq.data.encoders import register_bpe
 from metaseq.dataclass import MetaseqDataclass
+
 from .gpt2_bpe_utils import get_encoder
 
 DEFAULT_ENCODER_JSON = "https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json"

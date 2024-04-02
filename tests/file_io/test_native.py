@@ -10,10 +10,9 @@ import shutil
 import tempfile
 import unittest
 import uuid
+from typing import Optional
 
 from metaseq.file_io.common import PathManager
-
-from typing import Optional
 
 
 class TestNativeIO(unittest.TestCase):

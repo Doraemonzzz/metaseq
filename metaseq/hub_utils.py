@@ -11,20 +11,18 @@ import re
 import time
 from argparse import Namespace
 from typing import List, Optional
-from tokenizers import ByteLevelBPETokenizer
 
 import numpy as np
 import torch
+from tokenizers import ByteLevelBPETokenizer
 
-from metaseq import checkpoint_utils, tasks
-from metaseq import utils, distributed_utils
+from metaseq import checkpoint_utils, distributed_utils, tasks, utils
 from metaseq.data import encoders
 from metaseq.dataclass.configs import MetaseqConfig
 from metaseq.dataclass.utils import convert_namespace_to_omegaconf
 from metaseq.distributed import fsdp_enable_wrap, fsdp_wrap
-from metaseq.service.utils import normalize_newlines
 from metaseq.file_io import PathManager
-
+from metaseq.service.utils import normalize_newlines
 
 logger = logging.getLogger(__name__)
 

@@ -13,15 +13,12 @@ from torch import Tensor
 from metaseq import utils
 from metaseq.modules import (
     ActivationFn,
-    ModelParallelMultiheadAttention,
     Dropout,
     FeedForward,
     LayerNorm,
+    ModelParallelMultiheadAttention,
 )
-from metaseq.modules.megatron.mpu import (
-    ColumnParallelLinear,
-    RowParallelLinear,
-)
+from metaseq.modules.megatron.mpu import ColumnParallelLinear, RowParallelLinear
 
 
 def _weight_init(weight):

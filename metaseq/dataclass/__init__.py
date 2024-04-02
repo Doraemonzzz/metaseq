@@ -6,7 +6,6 @@
 from .configs import MetaseqDataclass
 from .constants import ChoiceEnum
 
-
 __all__ = [
     "MetaseqDataclass",
     "ChoiceEnum",

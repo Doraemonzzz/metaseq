@@ -3,13 +3,14 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-from typing import List
-from metaseq.data.cm3_dataset import CausalMaskedDocumentToSequenceDataset, adjust_spans
-
-import torch
-import unittest
 import random
+import unittest
+from typing import List
+
 import numpy as np
+import torch
+
+from metaseq.data.cm3_dataset import CausalMaskedDocumentToSequenceDataset, adjust_spans
 
 
 class TensorListDataset(torch.utils.data.Dataset):

@@ -352,4 +352,3 @@ std::tuple<at::Tensor, at::Tensor> multi_tensor_l2norm_scale_cuda(
 
   return std::tuple<at::Tensor, at::Tensor>(ret, ret_per_tensor);
 }
-

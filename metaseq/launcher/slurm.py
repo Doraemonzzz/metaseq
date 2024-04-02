@@ -17,9 +17,9 @@ from collections import OrderedDict
 from pathlib import Path
 
 import metaseq
-from metaseq.utils import get_random_port
-from metaseq.launcher.tombyard import tombstones
 from metaseq.launcher.sweep import get_env_from_args
+from metaseq.launcher.tombyard import tombstones
+from metaseq.utils import get_random_port
 
 try:
     import metaseq_internal

@@ -8,14 +8,11 @@ import tempfile
 import unittest
 
 import torch
-from metaseq import options
 
-from metaseq.tasks.streaming_language_modeling import StreamingLanguageModelingTask
-from cpu_tests.test_utils import (
-    write_one_jsonl,
-    write_dummy_bpe,
-)
+from cpu_tests.test_utils import write_dummy_bpe, write_one_jsonl
+from metaseq import options
 from metaseq.dataclass.utils import convert_namespace_to_omegaconf
+from metaseq.tasks.streaming_language_modeling import StreamingLanguageModelingTask
 
 try:
     import tokenizers  # noqa

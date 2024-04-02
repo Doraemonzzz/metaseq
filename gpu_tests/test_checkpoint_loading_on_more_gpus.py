@@ -15,7 +15,7 @@ import torch
 from metaseq.cli.train import cli_main as train_cli_main
 from metaseq.dataclass.configs import DistributedTrainingConfig
 from metaseq.launcher.opt_baselines import cli_main as sweep_cli_main
-from metaseq.launcher.opt_job_constants import Size, M
+from metaseq.launcher.opt_job_constants import M, Size
 
 logger = logging.getLogger(__name__)
 

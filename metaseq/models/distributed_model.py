@@ -8,9 +8,7 @@ import logging
 import torch.nn as nn
 from torch.nn.parallel import DistributedDataParallel
 
-from metaseq.distributed import (
-    ModuleProxyWrapper,
-)
+from metaseq.distributed import ModuleProxyWrapper
 
 logger = logging.getLogger(__name__)
 

@@ -10,6 +10,7 @@ import unittest
 import torch
 
 from metaseq.distributed import utils as distributed_utils
+
 from .utils import objects_are_equal, spawn_and_init
 
 

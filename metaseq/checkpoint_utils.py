@@ -6,11 +6,12 @@
 import ast
 import collections
 import logging
+import math
 import os
 import re
 import socket
 from typing import Any, Dict, List, Optional, Tuple
-import math
+
 import torch
 from omegaconf import OmegaConf
 

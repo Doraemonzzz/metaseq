@@ -11,7 +11,7 @@ First try:
 <-------- Showed failures writing to HDFS -------->
 ```
 ```
-Local filename cleanup: 
+Local filename cleanup:
 
 find . -type f -iname "*[*" | while IFS= read -r line; do mv "$line" "$(printf %s "$line" | sed -re 's/(\[|\])//g')"; done;
 find . -type f -iname "*(*" | while IFS= read -r line; do mv "$line" "$(printf %s "$line" | sed -re 's/(\(|\))//g')"; done;
