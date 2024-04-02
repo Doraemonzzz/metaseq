@@ -260,7 +260,10 @@ class StreamingLanguageModelingTask(LegacyTask):
         return cls(args)
 
     def _tokenize_one_json(self, json):
-        text = json["text"]
+        try:
+            text = json["text"]
+        except:
+            text = json["content"]
         return torch.LongTensor(
             # append an end-of-document symbol after each document
             self.tokenizer.encode(text.rstrip()).ids
