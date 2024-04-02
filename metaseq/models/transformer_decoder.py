@@ -115,7 +115,8 @@ class ModelParallelTransformerDecoder(BaseDecoder):
             if args.decoder_learned_pos and not self.use_alibi
             else None
         )
-        self.embed_positions.to(device).to(dtype)
+        if self.embed_positions != None:
+            self.embed_positions.to(device).to(dtype)
 
         self.layers = nn.ModuleList([])
         layers = []
