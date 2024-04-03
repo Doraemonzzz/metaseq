@@ -580,3 +580,10 @@ def extract_soft_alignment(attn, src_sent, tgt_sent, pad, eos):
             ["{:.6f}".format(p) for p in src_probs.tolist()] for src_probs in attn_valid
         ]
     return alignment
+
+
+BASE_DIM = 256
+
+
+def convert_to_multiple_of_base(x):
+    return BASE_DIM * ((x + BASE_DIM - 1) // BASE_DIM)

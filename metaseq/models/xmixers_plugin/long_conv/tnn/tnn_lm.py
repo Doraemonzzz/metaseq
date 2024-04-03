@@ -13,6 +13,7 @@ from metaseq.models.transformer_lm import (
     DEFAULT_MAX_TARGET_POSITIONS,
     TransformerLanguageModelConfig,
 )
+from metaseq.utils import convert_to_multiple_of_base
 
 
 @register_model("tnn_lm", dataclass=TransformerLanguageModelConfig)
@@ -39,17 +40,21 @@ class TnnLanguageModel(HfBaseModel):
 
 
 ##### base test
-@register_model_architecture("tnn_lm", "tnn_lm_test")
-def tnn_lm_test(args):
-    hf_config = TnnConfig().to_dict()
-    for k in hf_config:
-        args.k = hf_config[k]
-    # print(hf_config)
-
-    # print(type(args))
-    # print(args)
-    # args = Namespace(**vars(args), **vars(hf_config))
-
-    # print(args)
-    # from omegaconf import OmegaConf
-    # OmegaConf.update(args, {"config": TnnConfig()})
+@register_model_architecture("tnn_lm", "tnn_lm_385m")
+def tnn_lm_385m(args):
+    # gtu config
+    args.num_layers = 26
+    args.embed_dim = 1024
+    args.expand_ratio = 1
+    args.bias = False
+    args.gtu_activation = "silu"
+    args.causal = True
+    args.norm_type = "simplermsnorm"
+    args.use_decay = True
+    args.rpe_in_dim = 1
+    args.rpe_feature_dim = 32
+    args.rpe_layers = 3
+    args.dims = [-2]
+    # glu config
+    args.mid_dim = convert_to_multiple_of_base(int(3 * args.embed_dim))
+    args.glu_activation = "none"

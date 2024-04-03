@@ -5,7 +5,7 @@
 
 import logging
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import List, Optional
 
 import torch
 import torch.nn as nn
@@ -179,6 +179,30 @@ class TransformerLanguageModelConfig(MetaseqDataclass):
     batch_size: Optional[int] = II("dataset.batch_size")
     batch_size_valid: Optional[int] = II("dataset.batch_size_valid")
     model_parallel_size: int = II("common.model_parallel_size")
+
+    ########## add for huggingface
+    ##### tnn
+    # gtu config
+    embed_dim: int = 768
+    expand_ratio: int = 1
+    bias: bool = False
+    gtu_activation: str = "silu"
+    causal: bool = True
+    norm_type: str = "layernorm"
+    use_decay: bool = True
+    rpe_in_dim: int = 1
+    rpe_feature_dim: int = 32  # for rpe in tno
+    rpe_layers: int = 3
+    dims: List[int] = field(
+        default_factory=list,
+    )
+    # glu config
+    mid_dim: int = 1024
+    glu_activation: str = "silu"
+    # others
+    num_layers: int = 24
+    add_bos_token: bool = False
+    max_position_embeddings: int = 2048
 
 
 @register_model("transformer_lm", dataclass=TransformerLanguageModelConfig)
