@@ -295,7 +295,7 @@ class Trainer(object):
             self._optimizer = optim.MemoryEfficientFP16Optimizer.build_optimizer(
                 self.cfg, params, allow_unsupported=allow_unsupported
             )
-        elif self.cfg.common.fp16:
+        elif self.cfg.common.fp16 or self.cfg.common.bf16:  # qz add
             if self.cuda and torch.cuda.get_device_capability(0)[0] < 7:
                 logger.info(
                     "NOTE: your device does NOT support faster training with --fp16, "
