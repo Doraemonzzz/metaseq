@@ -17,6 +17,7 @@ from .base_decoder import BaseDecoder
 from .base_model import (
     BaseModel,
 )
+from .hf_base_model import HfBaseModel
 
 
 MODEL_REGISTRY = {}
@@ -103,9 +104,11 @@ def register_model(name, dataclass=None):
     def register_model_cls(cls):
         if name in MODEL_REGISTRY:
             raise ValueError("Cannot register duplicate model ({})".format(name))
-        if not issubclass(cls, BaseModel):
+        if (not issubclass(cls, BaseModel)) and (not issubclass(cls, HfBaseModel)):
             raise ValueError(
-                "Model ({}: {}) must extend BaseModel".format(name, cls.__name__)
+                "Model ({}: {}) must extend BaseModel or HfBaseModel".format(
+                    name, cls.__name__
+                )
             )
         MODEL_REGISTRY[name] = cls
         if dataclass is not None and not issubclass(dataclass, MetaseqDataclass):
