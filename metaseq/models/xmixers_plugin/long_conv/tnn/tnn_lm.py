@@ -5,9 +5,9 @@ from metaseq.models import register_model, register_model_architecture
 logger = logging.getLogger(__name__)
 
 from omegaconf import OmegaConf
-from transformers import AutoModelForCausalLM
 from xmixers.models import TnnConfig
 
+from metaseq.models.hf_base_decoder import HfBaseDecoder
 from metaseq.models.hf_base_model import HfBaseModel
 from metaseq.models.transformer_lm import (
     DEFAULT_MAX_TARGET_POSITIONS,
@@ -35,7 +35,7 @@ class TnnLanguageModel(HfBaseModel):
                 args, "tokens_per_sample", DEFAULT_MAX_TARGET_POSITIONS
             )
 
-        decoder = AutoModelForCausalLM.from_config(hf_config)
+        decoder = HfBaseDecoder(args, task.target_dictionary, hf_config)
         return cls(decoder)
 
 
@@ -58,3 +58,4 @@ def tnn_lm_385m(args):
     # glu config
     args.mid_dim = convert_to_multiple_of_base(int(3 * args.embed_dim))
     args.glu_activation = "none"
+    args.tie_word_embeddings = False

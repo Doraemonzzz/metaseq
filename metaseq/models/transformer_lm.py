@@ -196,12 +196,14 @@ class TransformerLanguageModelConfig(MetaseqDataclass):
     dims: List[int] = field(
         default_factory=list,
     )
+    vocab_size: int = 50272
     # glu config
     mid_dim: int = 1024
     glu_activation: str = "silu"
     # others
     num_layers: int = 24
     add_bos_token: bool = False
+    tie_word_embeddings: bool = True
     max_position_embeddings: int = 2048
 
 

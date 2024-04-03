@@ -14,10 +14,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
 from transformers import AutoModel
-from transformers.modeling_utils import PreTrainedModel
 
-from metaseq import utils
 from metaseq.dataclass.utils import gen_parser_from_dataclass
+
+from .hf_base_decoder import HfBaseDecoder
 
 logger = logging.getLogger(__name__)
 
@@ -38,7 +38,7 @@ class HfBaseModel(nn.Module):
         super().__init__()
         self._is_generation_fast = False
         self.decoder = decoder
-        check_type(self.decoder, PreTrainedModel)
+        check_type(self.decoder, HfBaseDecoder)
 
     @classmethod
     def add_args(cls, parser):
@@ -64,10 +64,7 @@ class HfBaseModel(nn.Module):
     ):
         """Get normalized probabilities (or log probs) from a net's output."""
         if hasattr(self, "decoder"):
-            if log_probs:
-                return utils.log_softmax(net_output, dim=-1)
-            else:
-                return utils.softmax(net_output, dim=-1)
+            return self.decoder.get_normalized_probs(net_output, log_probs)
         elif torch.is_tensor(net_output):
             # syntactic sugar for simple models which don't have a decoder
             # (e.g., the classification tutorial)
@@ -93,7 +90,7 @@ class HfBaseModel(nn.Module):
         skip_prepare_for_inference=False,
         **kwargs,
     ):
-        raise AutoModel.from_pretrained(model_name_or_path)
+        return AutoModel.from_pretrained(model_name_or_path)
 
     @classmethod
     def hub_models(cls):
