@@ -181,6 +181,12 @@ class TransformerLanguageModelConfig(MetaseqDataclass):
     model_parallel_size: int = II("common.model_parallel_size")
 
     ########## add for huggingface
+    ##### hf origin
+    num_hidden_layers: int = 24
+    hidden_size: int = 1024
+    intermediate_size: int = 2048
+    num_attention_heads: int = 8
+    hidden_act: str = "silu"
     ##### tnn
     # gtu config
     embed_dim: int = 768
