@@ -13,6 +13,14 @@ Optional:
 pip install fairscale
 ```
 
+## Todo
+- [x] Support training models compliant with the HF interface.
+- [x] Support DDP training resume.
+- [ ] Support HF, Sp, Tik tokenizers.
+- [ ] Support continue training for hf models.
+- [ ] Add a script to convert to hf format.
+- [ ] Add more stat for hf logging.
+
 ## License
 
 The majority of metaseq is licensed under the MIT license, however portions of the project are available under separate license terms:
