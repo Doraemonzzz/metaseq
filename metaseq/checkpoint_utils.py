@@ -504,11 +504,16 @@ def load_checkpoint_to_cpu(path, arg_overrides=None, load_on_all_ranks=False) ->
     # Expand multi-part checkpoints like "checkpoint_last-shard0.pt"
     paths_to_load, ddp_checkpoint_files_count = get_paths_to_load(path, suffix="shard")
     world_size = distributed_utils.get_data_parallel_world_size()
+    print(world_size, ddp_checkpoint_files_count)
     try:
         if world_size < ddp_checkpoint_files_count:
             assert len(paths_to_load) > 1
             state = _merge_flat_fsdp_shards([torch_load_cpu(f) for f in paths_to_load])
         elif world_size == ddp_checkpoint_files_count:
+            state = torch_load_cpu(paths_to_load[0])
+        elif (
+            world_size > ddp_checkpoint_files_count and ddp_checkpoint_files_count == 1
+        ):  # add support for ddp resume
             state = torch_load_cpu(paths_to_load[0])
         else:
             shard_ids = []

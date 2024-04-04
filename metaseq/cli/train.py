@@ -858,7 +858,7 @@ def cli_main(
     set_local_per_worker_env_variables()
     parser = options.get_training_parser()
     args = options.parse_args_and_arch(parser, modify_parser=modify_parser)
-
+    assert args.save_dir[0] == "/", "Save dir must be absolute path!"
     # For training - this is where arg parsing happens.
     cfg = convert_namespace_to_omegaconf(args)
 
