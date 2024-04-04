@@ -42,6 +42,7 @@ class TnnLanguageModel(HfBaseModel):
 ##### base test
 @register_model_architecture("tnn_lm", "tnn_lm_385m")
 def tnn_lm_385m(args):
+    args.initializer_range = 0.02
     # gtu config
     args.num_layers = 26
     args.embed_dim = 1024
@@ -55,7 +56,7 @@ def tnn_lm_385m(args):
     args.rpe_feature_dim = 32
     args.rpe_layers = 3
     args.dims = [-2]
+    args.lower_bound = 0.99
     # glu config
     args.mid_dim = convert_to_multiple_of_base(int(3 * args.embed_dim))
     args.glu_activation = "none"
-    args.tie_word_embeddings = False

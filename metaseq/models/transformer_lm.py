@@ -202,6 +202,7 @@ class TransformerLanguageModelConfig(MetaseqDataclass):
     dims: List[int] = field(
         default_factory=list,
     )
+    lower_bound: float = 0.99
     vocab_size: int = 50272
     # glu config
     mid_dim: int = 1024
@@ -211,6 +212,7 @@ class TransformerLanguageModelConfig(MetaseqDataclass):
     add_bos_token: bool = False
     tie_word_embeddings: bool = True
     max_position_embeddings: int = 2048
+    initializer_range: float = 0.02
 
 
 @register_model("transformer_lm", dataclass=TransformerLanguageModelConfig)
